@@ -38,7 +38,7 @@
         <div class="container is-max-desktop has-text-centered">
           <div class="alpha-badge"><span></span> Public Alpha</div>
           <h1 class="title is-1 publication-title"><span>Open</span>Spot: Modular Payloads for Field Robotics</h1>
-          <p class="subtitle is-4 project-subtitle">A configurable hardware and field-operations foundation for sensing, autonomy, and data collection on Boston Dynamics Spot.</p>
+          <p class="subtitle is-4 project-subtitle">Open hardware and software for sensing, autonomy, and field operations on Boston Dynamics Spot.</p>
 
           <ul class="contributors" aria-label="Project contributors">
             <li>Yash Turkar</li>
@@ -80,7 +80,7 @@
         <div class="hero-body">
           <figure class="hero-figure">
             <img src="static/images/openspot-payload.webp" alt="Annotated OpenSpot payload showing modular sensor mount, Jetson enclosure, GNSS and IMU, power and network enclosure, and long-range radio" width="1800" height="1160" fetchpriority="high">
-            <figcaption>Current OpenSpot reference payload. Published CAD is available as public-alpha STEP exports; the full fabrication and electronics package is still in development.</figcaption>
+            <figcaption>Current OpenSpot reference payload.</figcaption>
           </figure>
         </div>
       </div>
@@ -90,11 +90,11 @@
       <div class="container is-max-desktop">
         <div class="columns is-vcentered is-variable is-7">
           <div class="column is-6">
-            <p class="eyebrow">Why OpenSpot</p>
-            <h2 class="title is-2">Spend less time rebuilding the integration layer.</h2>
+            <p class="eyebrow">OpenSpot</p>
+            <h2 class="title is-2">A shared payload stack for Spot.</h2>
             <div class="content is-medium">
-              <p>Field robotics teams repeatedly solve the same mechanical, power, networking, compute, calibration, and operator-interface problems before they can test a research idea.</p>
-              <p>OpenSpot is documenting one working reference system as reusable open hardware: modular sensor plates, onboard Jetson compute, a high-bandwidth payload network, and a forthcoming handheld operator stack.</p>
+              <p>OpenSpot combines modular sensor mounts, Jetson compute, field networking, and a handheld operator interface.</p>
+              <p>The current release includes the mechanical designs and reference network. Electronics documentation and the Operator package are still in progress.</p>
             </div>
           </div>
           <div class="column is-6">
@@ -104,7 +104,7 @@
                 <source src="static/video/field-demo.mp4" type="video/mp4">
                 Your browser does not support embedded video.
               </video>
-              <figcaption>Prototype deployment footage. This demonstrates use, not quantified field performance.</figcaption>
+              <figcaption>Outdoor prototype deployment.</figcaption>
             </figure>
           </div>
         </div>
@@ -115,92 +115,55 @@
       <div class="container is-max-desktop">
         <p class="eyebrow has-text-centered">Reference architecture</p>
         <h2 class="title is-2 has-text-centered">Robot-to-operator connectivity</h2>
-        <p class="section-intro">Spot, compute, sensors, and the payload radio share a 2.5 GbE network. A point-to-point wireless bridge extends that network to the operator-side access point and handheld console.</p>
+        <p class="section-intro">Spot, the Jetson, sensors, and the payload radio share a 2.5 GbE network. A wireless bridge connects the robot to the operator.</p>
         <figure class="architecture-frame">
           <img src="static/images/network-architecture.webp" alt="Network diagram connecting Spot GXP, a 2.5 gigabit switch, Jetson Orin, Ouster LiDAR, Ubiquiti wireless bridge, operator router, portable power, and Steam Deck" width="1800" height="821" loading="lazy">
         </figure>
-        <div class="notice"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span>The addresses and components shown are examples. The wireless bridge is not a safety channel, and published range, latency, and packet-loss validation is still pending.</span></div>
       </div>
     </section>
 
     <section class="section component-section is-light" id="components">
       <div class="container is-max-desktop">
-        <p class="eyebrow has-text-centered">Four layers, one field workflow</p>
-        <h2 class="title is-2 has-text-centered">What the project brings together</h2>
+        <p class="eyebrow has-text-centered">System</p>
+        <h2 class="title is-2 has-text-centered">Hardware, networking, and control</h2>
         <div class="columns is-multiline component-grid">
           <div class="column is-6-tablet is-3-desktop">
             <article class="component-card">
               <div class="component-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
               <h3 class="title is-4">Modular hardware</h3>
-              <p>Compute, LiDAR, radio, auxiliary electronics, and hot-swappable sensor mounts designed as one payload system.</p>
-              <span class="status available">Alpha CAD available</span>
+              <p>Mounts for compute, LiDAR, radios, electronics, and swappable sensors.</p>
             </article>
           </div>
           <div class="column is-6-tablet is-3-desktop">
             <article class="component-card">
               <div class="component-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
               <h3 class="title is-4">Edge compute</h3>
-              <p>A Jetson Orin reference payload for perception, mapping, logging, and autonomy workloads close to the sensors.</p>
-              <span class="status partial">Reference documented</span>
+              <p>Jetson Orin compute for perception, mapping, logging, and autonomy.</p>
             </article>
           </div>
           <div class="column is-6-tablet is-3-desktop">
             <article class="component-card">
               <div class="component-icon"><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i></div>
               <h3 class="title is-4">Field networking</h3>
-              <p>Onboard switching and a long-range wireless bridge connecting robot telemetry to the operator side.</p>
-              <span class="status partial">Validation pending</span>
+              <p>Onboard switching and a wireless bridge to the operator.</p>
             </article>
           </div>
           <div class="column is-6-tablet is-3-desktop">
             <article class="component-card">
               <div class="component-icon"><i class="fa-solid fa-gamepad" aria-hidden="true"></i></div>
               <h3 class="title is-4">OpenSpot Operator</h3>
-              <p>A Steam Deck interface and Jetson daemon for control, telemetry, video, diagnostics, and mission supervision.</p>
-              <span class="status planned">Coming soon</span>
+              <p>A Steam Deck interface and Jetson daemon for control, telemetry, video, and diagnostics.</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="status">
-      <div class="container is-max-desktop">
-        <p class="eyebrow has-text-centered">Public-alpha contract</p>
-        <h2 class="title is-2 has-text-centered">Available does not mean validated.</h2>
-        <div class="table-container status-table-wrap">
-          <table class="table is-fullwidth is-hoverable status-table">
-            <thead><tr><th>Area</th><th>Available now</th><th>Next reproducibility milestone</th></tr></thead>
-            <tbody>
-              <tr><th>Mechanical</th><td>STEP models and design inventory</td><td>Native CAD, drawings, materials, tolerances, and assembly guide</td></tr>
-              <tr><th>Electrical</th><td>Reference power/network topology</td><td>Schematics, harness files, protection, BOM, and measured budgets</td></tr>
-              <tr><th>Networking</th><td>Reference bridge architecture</td><td>Repeatable range, throughput, latency, jitter, and loss tests</td></tr>
-              <tr><th>Operator</th><td>Experimental development repository</td><td>Safe lease handoff, packaged Deck build, and hardware validation</td></tr>
-              <tr><th>Evidence</th><td>Prototype media and internal use</td><td>Test protocols, raw logs, failures, and independent reproduction</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section roadmap-section is-dark" id="roadmap">
-      <div class="container is-max-desktop">
-        <p class="eyebrow">Roadmap</p>
-        <h2 class="title is-2">From prototype to reproducible field platform</h2>
-        <div class="roadmap-grid">
-          <div><span>01</span><h3>Documented alpha</h3><p>Inventory, scope, limitations, licensing, and reference architecture.</p></div>
-          <div><span>02</span><h3>Reproducible hardware</h3><p>Source CAD, drawings, BOM, electronics, assembly, and measured payload properties.</p></div>
-          <div><span>03</span><h3>Software bring-up</h3><p>Versioned deployment, packaged Operator, protocol tests, diagnostics, and recovery behavior.</p></div>
-          <div><span>04</span><h3>Field validation</h3><p>Repeatable network and mission tests, public logs, negative results, and an independent rebuild.</p></div>
-        </div>
-      </div>
-    </section>
-
     <section class="section contribute-section" id="contribute">
       <div class="container is-max-desktop has-text-centered">
-        <p class="eyebrow">Build it with us</p>
-        <h2 class="title is-2">Reproductions and honest failure reports are contributions.</h2>
-        <p class="section-intro">We welcome CAD improvements, electronics documentation, build reports, new sensor plates, validation procedures, and corrections from other Spot teams.</p>
+        <p class="eyebrow">Contribute</p>
+        <h2 class="title is-2">Build with OpenSpot</h2>
+        <p class="section-intro">We welcome CAD improvements, build reports, new sensor plates, and documentation fixes.</p>
         <a href="https://github.com/droneslab/OpenSpot/blob/main/CONTRIBUTING.md" class="button is-rounded is-dark is-medium">
           <span class="icon"><i class="fa-solid fa-code-pull-request" aria-hidden="true"></i></span><span>Contribution guide</span>
         </a>
